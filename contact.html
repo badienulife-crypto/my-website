@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get a Free Quote | SimpliTechPro — Smart Home Installation GTA</title>
+  <meta name="description" content="Get a free smart home installation quote in North York, Toronto and the GTA. Tell us what you need and we'll contact you fast." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://simplitechpro.com/contact.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-08TB02DB9P"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-08TB02DB9P');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "SimpliTechPro",
+    "url": "https://simplitechpro.com",
+    "telephone": "[ADD YOUR PHONE NUMBER]",
+    "areaServed": ["North York","Vaughan","Richmond Hill","Markham","Toronto","Etobicoke"]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">Simpli<span>Tech</span>Pro</a>
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="contact.html" class="btn btn-nav">Get a Free Quote</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- QUOTE WIZARD -->
+  <section class="quote-section">
+    <div class="quote-wrap">
+
+      <!-- PROGRESS BAR -->
+      <div class="progress-bar-wrap" id="progressWrap">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+
+      <!-- ===== STEP 1 — CONTACT INFO ===== -->
+      <div class="quote-step active" id="step1">
+        <div class="step-header">
+          <span class="step-tag">Step 1 of 3</span>
+          <h1>Receive a Free Quote</h1>
+          <p>Fill in your details below. We'll review your request and send you a quote directly via your preferred contact method — fast, no obligation.</p>
+        </div>
+        <div class="quote-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name <span class="required">*</span></label>
+              <input type="text" id="firstName" placeholder="John" required />
+            </div>
+            <div class="form-group">
+              <label>Last Name <span class="optional">(optional)</span></label>
+              <input type="text" id="lastName" placeholder="Smith" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Phone Number <span class="required">*</span></label>
+            <input type="tel" id="phone" placeholder="(416) 555-0123" required />
+          </div>
+          <div class="form-group">
+            <label>Email Address <span class="optional">(optional)</span></label>
+            <input type="email" id="email" placeholder="john@example.com" />
+          </div>
+          <div class="form-group">
+            <label>Your Location <span class="required">*</span></label>
+            <div class="pill-group" id="clientLocation">
+              <span class="pill" onclick="selectPill(this,'clientLocation')">North York</span>
+              <span class="pill" onclick="selectPill(this,'clientLocation')">Vaughan</span>
+              <span class="pill" onclick="selectPill(this,'clientLocation')">Richmond Hill</span>
+              <span class="pill" onclick="selectPill(this,'clientLocation')">Markham</span>
+              <span class="pill" onclick="selectPill(this,'clientLocation')">Toronto</span>
+              <span class="pill" onclick="selectPill(this,'clientLocation')">Downtown Toronto</span>
+              <span class="pill" onclick="selectPill(this,'clientLocation')">Etobicoke</span>
+              <span class="pill" onclick="selectPill(this,'clientLocation'); toggleOtherLocation(this)">Other</span>
+            </div>
+            <div id="otherLocationBox" style="display:none; margin-top:12px;">
+              <input type="text" id="otherLocationText" placeholder="Please specify your location..." />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>How would you like to receive your quote? <span class="optional">(select all that apply)</span></label>
+            <div class="contact-method-group">
+              <label class="method-option">
+                <input type="checkbox" name="contactMethod" value="call" id="methodCall" />
+                <span>📞 Call</span>
+              </label>
+              <label class="method-option">
+                <input type="checkbox" name="contactMethod" value="text" id="methodText" />
+                <span>💬 Text</span>
+              </label>
+              <label class="method-option">
+                <input type="checkbox" name="contactMethod" value="email" id="methodEmail" />
+                <span>✉️ Email</span>
+              </label>
+            </div>
+          </div>
+          <div class="form-error" id="step1Error"></div>
+          <button class="btn btn-primary btn-full" onclick="goToStep2()">Next →</button>
+          <div class="skip-link" onclick="skipToEnd()">
+            I'm running out of time, have someone contact me
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== STEP 2 — QUICK OR DETAILED ===== -->
+      <div class="quote-step" id="step2">
+        <div class="step-header">
+          <span class="step-tag">Step 2 of 3</span>
+          <h2>Help Us Better Assist You</h2>
+          <p>Answer a few questions for a faster and more accurate quote.</p>
+        </div>
+        <div class="option-cards">
+          <div class="option-card" id="optionReady" onclick="selectOption('ready')">
+            <div class="option-icon">🚀</div>
+            <h3>I'm ready, let's go</h3>
+            <p>Tell us what you need and we'll put together a detailed quote for you.</p>
+          </div>
+          <div class="option-card" id="optionQuick" onclick="selectOption('quick')">
+            <div class="option-icon">⚡</div>
+            <h3>I just need to leave a quick message</h3>
+            <p>Leave us a note and we'll reach out to get the details from you directly.</p>
+          </div>
+        </div>
+
+        <div class="quick-message-box" id="quickMessageBox">
+          <div class="form-group">
+            <label>Your Message</label>
+            <textarea id="quickMessage" rows="5" placeholder="Tell us what you need help with and we'll be in touch..."></textarea>
+          </div>
+          <button class="btn btn-primary btn-full" onclick="submitQuickMessage()">Send Message →</button>
+        </div>
+
+        <div class="step-nav">
+          <button class="btn-back" onclick="goToStep(1)">← Back</button>
+        </div>
+      </div>
+
+      <!-- ===== STEP 3 — SERVICE SELECTION ===== -->
+      <div class="quote-step" id="step3">
+        <div class="step-header">
+          <span class="step-tag">Step 3 of 3</span>
+          <h2>What Would You Like Done?</h2>
+          <p>Select everything that applies — you can choose more than one.</p>
+        </div>
+        <div class="service-select-grid">
+          <div class="service-select-card" data-service="entertainment" onclick="toggleService(this)">
+            <div class="ss-icon">📺</div>
+            <h3>Home Entertainment</h3>
+            <p>TV mounting, smart TV setup, soundbars, streaming devices</p>
+            <div class="ss-check">✓</div>
+          </div>
+          <div class="service-select-card" data-service="lighting" onclick="toggleService(this)">
+            <div class="ss-icon">💡</div>
+            <h3>Smart Lighting</h3>
+            <p>Smart bulbs, dimmers, scenes, schedules, voice control</p>
+            <div class="ss-check">✓</div>
+          </div>
+          <div class="service-select-card" data-service="security" onclick="toggleService(this)">
+            <div class="ss-icon">🔒</div>
+            <h3>Security & Cameras</h3>
+            <p>Smart locks, doorbell cameras, indoor & outdoor cameras</p>
+            <div class="ss-check">✓</div>
+          </div>
+          <div class="service-select-card" data-service="climate" onclick="toggleService(this)">
+            <div class="ss-icon">🌡️</div>
+            <h3>Climate Control</h3>
+            <p>Smart thermostats, scheduling, energy saving, remote control</p>
+            <div class="ss-check">✓</div>
+          </div>
+          <div class="service-select-card" data-service="audio" onclick="toggleService(this)">
+            <div class="ss-icon">🎵</div>
+            <h3>Whole-Home Audio</h3>
+            <p>Multi-room speakers, Sonos, Bose, zone control, streaming</p>
+            <div class="ss-check">✓</div>
+          </div>
+          <div class="service-select-card" data-service="automation" onclick="toggleService(this)">
+            <div class="ss-icon">📱</div>
+            <h3>Home Automation</h3>
+            <p>Google Home, Alexa, Apple HomeKit, routines, device pairing</p>
+            <div class="ss-check">✓</div>
+          </div>
+        </div>
+        <div class="form-error" id="step3Error"></div>
+        <button class="btn btn-primary btn-full" onclick="goToServicePages()" style="margin-top:24px;">Next →</button>
+        <div class="skip-link" onclick="skipToEnd()">
+          I'm running out of time, have someone contact me
+        </div>
+        <div class="step-nav">
+          <button class="btn-back" onclick="goToStep(2)">← Back</button>
+        </div>
+      </div>
+
+      <!-- ===== HOME ENTERTAINMENT ===== -->
+      <div class="quote-step" id="stepEntertainment">
+        <div class="step-header">
+          <span class="step-tag">📺 Home Entertainment</span>
+          <h2>Tell Us About Your Entertainment Setup</h2>
+        </div>
+        <div class="quote-form">
+
+          <div class="form-group">
+            <label>How many TVs do you want mounted or set up?</label>
+            <div class="pill-group" id="tvCount">
+              <span class="pill" onclick="selectPill(this,'tvCount')">1</span>
+              <span class="pill" onclick="selectPill(this,'tvCount')">2</span>
+              <span class="pill" onclick="selectPill(this,'tvCount')">3</span>
+              <span class="pill" onclick="selectPill(this,'tvCount')">4+</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Do you already have the TV and mounting hardware?</label>
+            <div class="pill-group" id="entHasEquip">
+              <span class="pill" onclick="selectPill(this,'entHasEquip')">Yes, I have everything</span>
+              <span class="pill" onclick="selectPill(this,'entHasEquip')">I have the TV only</span>
+              <span class="pill" onclick="selectPill(this,'entHasEquip')">I need help choosing</span>
+              <span class="pill" onclick="selectPill(this,'entHasEquip')">Mix of both</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>What type of property is this?</label>
+            <div class="pill-group" id="entProperty">
+              <span class="pill" onclick="selectPill(this,'entProperty')">House</span>
+              <span class="pill" onclick="selectPill(this,'entProperty')">Condo</span>
+              <span class="pill" onclick="selectPill(this,'entProperty')">Apartment</span>
+              <span class="pill" onclick="selectPill(this,'entProperty')">Townhouse</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>What is your wall surface type?</label>
+            <div class="pill-group" id="entWall">
+              <span class="pill" onclick="selectPill(this,'entWall')">Drywall</span>
+              <span class="pill" onclick="selectPill(this,'entWall')">Brick</span>
+              <span class="pill" onclick="selectPill(this,'entWall')">Stone</span>
+              <span class="pill" onclick="selectPill(this,'entWall')">Concrete</span>
+              <span class="pill" onclick="selectPill(this,'entWall')">I don't know</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>What else do you need? <span class="optional">(select all that apply)</span></label>
+            <div class="check-group">
+              <label class="check-option"><input type="checkbox" name="ent" value="smarttv" /> Smart TV setup & apps</label>
+              <label class="check-option"><input type="checkbox" name="ent" value="soundbar" /> Soundbar installation</label>
+              <label class="check-option"><input type="checkbox" name="ent" value="streaming" /> Streaming device setup (Apple TV, Firestick, Chromecast)</label>
+              <label class="check-option"><input type="checkbox" name="ent" value="cables" /> Cable management & hiding wires</label>
+              <label class="check-option"><input type="checkbox" name="ent" value="gaming" /> Gaming console setup</label>
+            </div>
+          </div>
+
+          
+
+          <div class="form-group">
+            <label>Anything else we should know? <span class="optional">(optional)</span></label>
+            <textarea rows="3" placeholder="e.g. I want cables hidden in the wall, I have a fireplace mount..."></textarea>
+          </div>
+
+        </div>
+        <button class="btn btn-primary btn-full" onclick="nextServicePage('entertainment')">Next →</button>
+        <div class="skip-link" onclick="skipToEnd()">I'm running out of time, have someone contact me</div>
+        <div class="step-nav"><button class="btn-back" onclick="prevServicePage()">← Back</button></div>
+      </div>
+
+      <!-- ===== SMART LIGHTING ===== -->
+      <div class="quote-step" id="stepLighting">
+        <div class="step-header">
+          <span class="step-tag">💡 Smart Lighting</span>
+          <h2>Tell Us About Your Lighting Needs</h2>
+        </div>
+        <div class="quote-form">
+
+          <div class="form-group">
+            <label>How many rooms do you want smart lighting in?</label>
+            <div class="pill-group" id="lightRooms">
+              <span class="pill" onclick="selectPill(this,'lightRooms')">1–2 rooms</span>
+              <span class="pill" onclick="selectPill(this,'lightRooms')">3–5 rooms</span>
+              <span class="pill" onclick="selectPill(this,'lightRooms')">Whole home</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Describe what you need</label>
+            <textarea rows="4" placeholder="e.g. Number of rooms, how many light switches, how many fixtures per switch..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Do you have reliable WiFi?</label>
+            <div class="pill-group" id="lightWifi">
+              <span class="pill" onclick="selectPill(this,'lightWifi')">Yes</span>
+              <span class="pill" onclick="selectPill(this,'lightWifi')">No</span>
+              <span class="pill" onclick="selectPill(this,'lightWifi')">Not sure if reliable</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Do you already have smart bulbs or switches?</label>
+            <div class="pill-group" id="lightHasEquip">
+              <span class="pill" onclick="selectPill(this,'lightHasEquip')">Yes</span>
+              <span class="pill" onclick="selectPill(this,'lightHasEquip')">No</span>
+              <span class="pill" onclick="selectPill(this,'lightHasEquip')">Some of it</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Anything else we should know? <span class="optional">(optional)</span></label>
+            <textarea rows="3" placeholder="e.g. I want everything connected to Google Home..."></textarea>
+          </div>
+
+        </div>
+        <button class="btn btn-primary btn-full" onclick="nextServicePage('lighting')">Next →</button>
+        <div class="skip-link" onclick="skipToEnd()">I'm running out of time, have someone contact me</div>
+        <div class="step-nav"><button class="btn-back" onclick="prevServicePage()">← Back</button></div>
+      </div>
+
+      <!-- ===== SECURITY ===== -->
+      <div class="quote-step" id="stepSecurity">
+        <div class="step-header">
+          <span class="step-tag">🔒 Security & Cameras</span>
+          <h2>Tell Us About Your Security Needs</h2>
+        </div>
+        <div class="quote-form">
+
+          <div class="form-group">
+            <label>What type of property is this?</label>
+            <div class="pill-group" id="secProperty">
+              <span class="pill" onclick="selectPill(this,'secProperty')">House</span>
+              <span class="pill" onclick="selectPill(this,'secProperty')">Condo / Apartment</span>
+              <span class="pill" onclick="selectPill(this,'secProperty')">Townhouse</span>
+              <span class="pill" onclick="selectPill(this,'secProperty')">Rental / Airbnb</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Has your home been pre-wired for cameras?</label>
+            <div class="pill-group" id="secPrewired">
+              <span class="pill" onclick="selectPill(this,'secPrewired')">Yes</span>
+              <span class="pill" onclick="selectPill(this,'secPrewired')">No</span>
+              <span class="pill" onclick="selectPill(this,'secPrewired')">Not Sure</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>What do you need? <span class="optional">(select all that apply)</span></label>
+            <div class="check-group">
+              <label class="check-option"><input type="checkbox" name="sec" value="doorbell" /> Doorbell camera (Ring, Nest, Arlo)</label>
+              <label class="check-option"><input type="checkbox" name="sec" value="outdoor" /> Outdoor security cameras</label>
+              <label class="check-option"><input type="checkbox" name="sec" value="indoor" /> Indoor cameras</label>
+              <label class="check-option"><input type="checkbox" name="sec" value="lock" /> Smart door lock</label>
+              <label class="check-option"><input type="checkbox" name="sec" value="motion" /> Motion sensor alerts</label>
+              <label class="check-option"><input type="checkbox" name="sec" value="remote" /> Remote viewing & app setup</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>How many cameras are you thinking?</label>
+            <div class="pill-group" id="secCamCount">
+              <span class="pill" onclick="selectPill(this,'secCamCount')">1</span>
+              <span class="pill" onclick="selectPill(this,'secCamCount')">2–3</span>
+              <span class="pill" onclick="selectPill(this,'secCamCount')">4–6</span>
+              <span class="pill" onclick="selectPill(this,'secCamCount')">Not sure yet</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Do you already have cameras or equipment?</label>
+            <div class="pill-group" id="secHasEquip">
+              <span class="pill" onclick="selectPill(this,'secHasEquip')">Yes</span>
+              <span class="pill" onclick="selectPill(this,'secHasEquip')">No</span>
+              <span class="pill" onclick="selectPill(this,'secHasEquip')">Some of it</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Anything else we should know? <span class="optional">(optional)</span></label>
+            <textarea rows="3" placeholder="e.g. I need cameras covering my driveway and backyard..."></textarea>
+          </div>
+
+        </div>
+        <button class="btn btn-primary btn-full" onclick="nextServicePage('security')">Next →</button>
+        <div class="skip-link" onclick="skipToEnd()">I'm running out of time, have someone contact me</div>
+        <div class="step-nav"><button class="btn-back" onclick="prevServicePage()">← Back</button></div>
+      </div>
+
+      <!-- ===== CLIMATE ===== -->
+      <div class="quote-step" id="stepClimate">
+        <div class="step-header">
+          <span class="step-tag">🌡️ Climate Control</span>
+          <h2>Tell Us About Your Climate Setup</h2>
+        </div>
+        <div class="quote-form">
+
+          <div class="form-group">
+            <label>What heating system do you have?</label>
+            <div class="pill-group" id="climateSystem">
+              <span class="pill" onclick="selectPill(this,'climateSystem')">Forced air (furnace)</span>
+              <span class="pill" onclick="selectPill(this,'climateSystem')">Heat pump</span>
+              <span class="pill" onclick="selectPill(this,'climateSystem')">Baseboard / electric</span>
+              <span class="pill" onclick="selectPill(this,'climateSystem')">Not sure</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>What do you need? <span class="optional">(select all that apply)</span></label>
+            <div class="check-group">
+              <label class="check-option"><input type="checkbox" name="climate" value="thermostat" /> Smart thermostat installation</label>
+              <label class="check-option"><input type="checkbox" name="climate" value="schedule" /> Schedule & routine setup</label>
+              <label class="check-option"><input type="checkbox" name="climate" value="remote" /> Remote control from phone</label>
+              <label class="check-option"><input type="checkbox" name="climate" value="energy" /> Energy saving optimization</label>
+              <label class="check-option"><input type="checkbox" name="climate" value="multizone" /> Multi-zone temperature control</label>
+              <label class="check-option"><input type="checkbox" name="climate" value="rebate" /> Ontario rebate guidance (up to $100)</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Do you already have a smart thermostat?</label>
+            <div class="pill-group" id="climateHasEquip">
+              <span class="pill" onclick="selectPill(this,'climateHasEquip')">Yes</span>
+              <span class="pill" onclick="selectPill(this,'climateHasEquip')">No</span>
+              <span class="pill" onclick="selectPill(this,'climateHasEquip')">I need a recommendation</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Anything else we should know? <span class="optional">(optional)</span></label>
+            <textarea rows="3" placeholder="e.g. I have a Nest but it's not configured properly..."></textarea>
+          </div>
+
+        </div>
+        <button class="btn btn-primary btn-full" onclick="nextServicePage('climate')">Next →</button>
+        <div class="skip-link" onclick="skipToEnd()">I'm running out of time, have someone contact me</div>
+        <div class="step-nav"><button class="btn-back" onclick="prevServicePage()">← Back</button></div>
+      </div>
+
+      <!-- ===== AUDIO ===== -->
+      <div class="quote-step" id="stepAudio">
+        <div class="step-header">
+          <span class="step-tag">🎵 Whole-Home Audio</span>
+          <h2>Tell Us About Your Audio Needs</h2>
+        </div>
+        <div class="quote-form">
+
+          <div class="form-group">
+            <label>How many rooms do you want audio in?</label>
+            <div class="pill-group" id="audioRooms">
+              <span class="pill" onclick="selectPill(this,'audioRooms')">1 room</span>
+              <span class="pill" onclick="selectPill(this,'audioRooms')">2–3 rooms</span>
+              <span class="pill" onclick="selectPill(this,'audioRooms')">4+ rooms</span>
+              <span class="pill" onclick="selectPill(this,'audioRooms')">Whole home</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>What do you need? <span class="optional">(select all that apply)</span></label>
+            <div class="check-group">
+              <label class="check-option"><input type="checkbox" name="audio" value="speakers" /> Speaker installation</label>
+              <label class="check-option"><input type="checkbox" name="audio" value="zones" /> Multi-zone setup (different music per room)</label>
+              <label class="check-option"><input type="checkbox" name="audio" value="streaming" /> Streaming setup (Spotify, Apple Music)</label>
+              <label class="check-option"><input type="checkbox" name="audio" value="voice" /> Voice control integration</label>
+              <label class="check-option"><input type="checkbox" name="audio" value="outdoor" /> Outdoor speakers</label>
+              <label class="check-option"><input type="checkbox" name="audio" value="app" /> App setup & walkthrough</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Do you already have speakers or audio equipment?</label>
+            <div class="pill-group" id="audioHasEquip">
+              <span class="pill" onclick="selectPill(this,'audioHasEquip')">Yes</span>
+              <span class="pill" onclick="selectPill(this,'audioHasEquip')">No</span>
+              <span class="pill" onclick="selectPill(this,'audioHasEquip')">Some of it</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Anything else we should know? <span class="optional">(optional)</span></label>
+            <textarea rows="3" placeholder="e.g. I have a Sonos system but need more rooms added..."></textarea>
+          </div>
+
+        </div>
+        <button class="btn btn-primary btn-full" onclick="nextServicePage('audio')">Next →</button>
+        <div class="skip-link" onclick="skipToEnd()">I'm running out of time, have someone contact me</div>
+        <div class="step-nav"><button class="btn-back" onclick="prevServicePage()">← Back</button></div>
+      </div>
+
+      <!-- ===== AUTOMATION ===== -->
+      <div class="quote-step" id="stepAutomation">
+        <div class="step-header">
+          <span class="step-tag">📱 Home Automation</span>
+          <h2>Tell Us About Your Automation Goals</h2>
+        </div>
+        <div class="quote-form">
+
+          <div class="form-group">
+            <label>Which ecosystem do you use or prefer?</label>
+            <div class="pill-group" id="autoEco">
+              <span class="pill" onclick="selectPill(this,'autoEco')">Google Home</span>
+              <span class="pill" onclick="selectPill(this,'autoEco')">Amazon Alexa</span>
+              <span class="pill" onclick="selectPill(this,'autoEco')">Apple HomeKit</span>
+              <span class="pill" onclick="selectPill(this,'autoEco')">SmartThings</span>
+              <span class="pill" onclick="selectPill(this,'autoEco')">Not sure</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>What do you need? <span class="optional">(select all that apply)</span></label>
+            <div class="check-group">
+              <label class="check-option"><input type="checkbox" name="auto" value="hub" /> Smart hub setup</label>
+              <label class="check-option"><input type="checkbox" name="auto" value="pair" /> Device pairing & configuration</label>
+              <label class="check-option"><input type="checkbox" name="auto" value="routines" /> Routine & automation setup</label>
+              <label class="check-option"><input type="checkbox" name="auto" value="voice" /> Voice assistant configuration</label>
+              <label class="check-option"><input type="checkbox" name="auto" value="apps" /> App consolidation (one app for everything)</label>
+              <label class="check-option"><input type="checkbox" name="auto" value="walkthrough" /> Full walkthrough & training</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>How many smart devices do you currently have?</label>
+            <div class="pill-group" id="autoDevices">
+              <span class="pill" onclick="selectPill(this,'autoDevices')">1–5</span>
+              <span class="pill" onclick="selectPill(this,'autoDevices')">6–15</span>
+              <span class="pill" onclick="selectPill(this,'autoDevices')">15+</span>
+              <span class="pill" onclick="selectPill(this,'autoDevices')">Starting fresh</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Anything else we should know? <span class="optional">(optional)</span></label>
+            <textarea rows="3" placeholder="e.g. I have devices from different brands that won't talk to each other..."></textarea>
+          </div>
+
+        </div>
+        <button class="btn btn-primary btn-full" onclick="nextServicePage('automation')">Next →</button>
+        <div class="skip-link" onclick="skipToEnd()">I'm running out of time, have someone contact me</div>
+        <div class="step-nav"><button class="btn-back" onclick="prevServicePage()">← Back</button></div>
+      </div>
+
+      <!-- ===== THANK YOU ===== -->
+      <div class="quote-step" id="stepThankyou">
+        <div class="thankyou-wrap">
+          <div class="thankyou-icon">✅</div>
+          <h2>We've Got Your Request!</h2>
+          <p class="thankyou-main">We've received your information and will be sending your quote via your <strong id="preferredMethod">preferred contact method</strong> shortly.</p>
+          <div class="thankyou-box">
+            <p>📍 We serve North York, Vaughan, Richmond Hill, Markham, Toronto & Etobicoke</p>
+            <p>⏱ Most jobs completed in under 2 hours</p>
+            <p>💰 Flat rate pricing — no surprises</p>
+          </div>
+          <a href="index.html" class="btn btn-primary" style="margin-top:32px;">Back to Home</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="logo">Simpli<span>Tech</span>Pro</div>
+        <p>Your home, intelligently connected.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-areas">
+        <h4>Service Areas</h4>
+        <ul>
+          <li>North York</li>
+          <li>Vaughan</li>
+          <li>Richmond Hill</li>
+          <li>Markham</li>
+          <li>Toronto</li>
+          <li>Etobicoke</li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><a href="contact.html">Get a Free Quote</a></p>
+        <p><a href="mailto:info@simplitechpro.com">info@simplitechpro.com</a></p>
+        <p>simplitechpro.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2025 SimpliTechPro. All rights reserved. | Serving the Greater Toronto Area</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    let selectedServices = [];
+    let serviceQueue = [];
+    let currentServiceIndex = 0;
+    let userData = {};
+
+    function showStep(stepId) {
+      document.querySelectorAll('.quote-step').forEach(s => s.classList.remove('active'));
+      document.getElementById(stepId).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      updateProgress(stepId);
+    }
+
+    function updateProgress(stepId) {
+      const progressMap = {
+        'step1': 10, 'step2': 30, 'step3': 50,
+        'stepEntertainment': 65, 'stepLighting': 65,
+        'stepSecurity': 65, 'stepClimate': 65,
+        'stepAudio': 65, 'stepAutomation': 65,
+        'stepThankyou': 100
+      };
+      document.getElementById('progressBar').style.width = (progressMap[stepId] || 10) + '%';
+    }
+
+    function goToStep(n) { showStep('step' + n); }
+
+    function goToStep2() {
+      const firstName = document.getElementById('firstName').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const errorEl = document.getElementById('step1Error');
+      const emailSelected = document.getElementById('methodEmail').checked;
+      const selectedMethods = Array.from(document.querySelectorAll('input[name="contactMethod"]:checked')).map(i => i.value);
+
+      if (!firstName) {
+        errorEl.textContent = 'Please enter your first name.';
+        return;
+      }
+      if (!phone) {
+        errorEl.textContent = 'Please enter your phone number.';
+        return;
+      }
+      if (emailSelected && !email) {
+        errorEl.textContent = 'You selected Email as a contact method — please enter your email address above.';
+        document.getElementById('email').focus();
+        document.getElementById('email').style.borderColor = '#E8641A';
+        return;
+      }
+      if (selectedMethods.length === 0) {
+        errorEl.textContent = 'Please select at least one contact method.';
+        return;
+      }
+
+      errorEl.textContent = '';
+      document.getElementById('email').style.borderColor = '';
+
+      let location = getActivePill('clientLocation');
+      if (location === 'Not selected') {
+        errorEl.textContent = 'Please select your location.';
+        return;
+      }
+      if (location === 'Other') {
+        const otherText = document.getElementById('otherLocationText').value.trim();
+        if (!otherText) {
+          errorEl.textContent = 'Please specify your location.';
+          document.getElementById('otherLocationText').focus();
+          return;
+        }
+        location = 'Other: ' + otherText;
+      }
+      userData.location = location;
+
+      userData.firstName = firstName;
+      userData.lastName = document.getElementById('lastName').value.trim();
+      userData.phone = phone;
+      userData.email = email;
+      userData.contactMethod = selectedMethods.join(', ');
+      showStep('step2');
+    }
+
+    function selectOption(option) {
+      document.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
+      if (option === 'ready') {
+        document.getElementById('optionReady').classList.add('selected');
+        document.getElementById('quickMessageBox').style.display = 'none';
+        setTimeout(() => showStep('step3'), 400);
+      } else {
+        document.getElementById('optionQuick').classList.add('selected');
+        document.getElementById('quickMessageBox').style.display = 'block';
+        document.getElementById('quickMessageBox').scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    function submitQuickMessage() {
+      userData.quickMessage = document.getElementById('quickMessage').value.trim();
+      submitToFormspree();
+      skipToEnd();
+    }
+
+    function toggleService(card) {
+      card.classList.toggle('selected');
+      const service = card.dataset.service;
+      if (card.classList.contains('selected')) {
+        if (!selectedServices.includes(service)) selectedServices.push(service);
+      } else {
+        selectedServices = selectedServices.filter(s => s !== service);
+      }
+    }
+
+    function goToServicePages() {
+      if (selectedServices.length === 0) {
+        document.getElementById('step3Error').textContent = 'Please select at least one service.';
+        return;
+      }
+      document.getElementById('step3Error').textContent = '';
+      const order = ['entertainment','lighting','security','climate','audio','automation'];
+      serviceQueue = order.filter(s => selectedServices.includes(s));
+      currentServiceIndex = 0;
+      showServicePage();
+    }
+
+    function showServicePage() {
+      if (currentServiceIndex < serviceQueue.length) {
+        const pageMap = {
+          entertainment: 'stepEntertainment',
+          lighting: 'stepLighting',
+          security: 'stepSecurity',
+          climate: 'stepClimate',
+          audio: 'stepAudio',
+          automation: 'stepAutomation'
+        };
+        showStep(pageMap[serviceQueue[currentServiceIndex]]);
+      } else {
+        submitToFormspree();
+        showStep('stepThankyou');
+        document.getElementById('preferredMethod').textContent = userData.contactMethod || 'preferred contact method';
+      }
+    }
+
+   function nextServicePage() {
+      currentServiceIndex++;
+      showServicePage();
+    }
+
+    function prevServicePage() {
+      if (currentServiceIndex > 0) {
+        currentServiceIndex--;
+        showServicePage();
+      } else {
+        showStep('step3');
+      }
+    }
+
+    function selectPill(el, groupId) {
+      document.querySelectorAll('#' + groupId + ' .pill').forEach(p => p.classList.remove('active'));
+      el.classList.add('active');
+    }
+
+    function toggleOtherLocation(pill) {
+      const box = document.getElementById('otherLocationBox');
+      if (pill.classList.contains('active')) {
+        box.style.display = 'block';
+        document.getElementById('otherLocationText').focus();
+      } else {
+        box.style.display = 'none';
+      }
+    }
+
+    function showFileNames(input, listId) {
+      const list = document.getElementById(listId);
+      list.innerHTML = '';
+      Array.from(input.files).forEach(file => {
+        const item = document.createElement('div');
+        item.className = 'file-item';
+        item.textContent = '📎 ' + file.name;
+        list.appendChild(item);
+      });
+    }
+
+    function skipToEnd() {
+      submitToFormspree();
+      showStep('stepThankyou');
+      const method = document.querySelector('input[name="contactMethod"]:checked');
+      document.getElementById('preferredMethod').textContent = method ? method.value : 'preferred contact method';
+    }
+
+    function submitToFormspree() {
+      const formData = new FormData();
+
+      // ── CONTACT INFO ──
+      formData.append('First Name', userData.firstName || '');
+      formData.append('Last Name', userData.lastName || '');
+      formData.append('Phone', userData.phone || '');
+      formData.append('Email', userData.email || '');
+      formData.append('Location', userData.location || '');
+      formData.append('Preferred Contact Method', userData.contactMethod || '');
+      formData.append('Services Selected', selectedServices.join(', ') || 'Quick message');
+      formData.append('Quick Message', userData.quickMessage || '');
+
+      // ── ENTERTAINMENT DETAILS ──
+      if (selectedServices.includes('entertainment')) {
+        formData.append('ENT — Number of TVs', getActivePill('tvCount'));
+        formData.append('ENT — Has TV & Hardware', getActivePill('entHasEquip'));
+        formData.append('ENT — Property Type', getActivePill('entProperty'));
+        formData.append('ENT — Wall Surface', getActivePill('entWall'));
+        formData.append('ENT — Additional Needs', getChecked('ent'));
+        formData.append('ENT — Extra Notes', getTextarea('stepEntertainment'));
+      }
+
+      // ── LIGHTING DETAILS ──
+      if (selectedServices.includes('lighting')) {
+        formData.append('LIGHT — Number of Rooms', getActivePill('lightRooms'));
+        formData.append('LIGHT — Description', getTextareaByIndex('stepLighting', 0));
+        formData.append('LIGHT — Reliable WiFi', getActivePill('lightWifi'));
+        formData.append('LIGHT — Has Equipment', getActivePill('lightHasEquip'));
+        formData.append('LIGHT — Extra Notes', getTextareaByIndex('stepLighting', 1));
+      }
+
+      // ── SECURITY DETAILS ──
+      if (selectedServices.includes('security')) {
+        formData.append('SEC — Property Type', getActivePill('secProperty'));
+        formData.append('SEC — Pre-Wired', getActivePill('secPrewired'));
+        formData.append('SEC — Needs', getChecked('sec'));
+        formData.append('SEC — Camera Count', getActivePill('secCamCount'));
+        formData.append('SEC — Has Equipment', getActivePill('secHasEquip'));
+        formData.append('SEC — Extra Notes', getTextarea('stepSecurity'));
+      }
+
+      // ── CLIMATE DETAILS ──
+      if (selectedServices.includes('climate')) {
+        formData.append('CLIMATE — Heating System', getActivePill('climateSystem'));
+        formData.append('CLIMATE — Needs', getChecked('climate'));
+        formData.append('CLIMATE — Has Thermostat', getActivePill('climateHasEquip'));
+        formData.append('CLIMATE — Extra Notes', getTextarea('stepClimate'));
+      }
+
+      // ── AUDIO DETAILS ──
+      if (selectedServices.includes('audio')) {
+        formData.append('AUDIO — Number of Rooms', getActivePill('audioRooms'));
+        formData.append('AUDIO — Needs', getChecked('audio'));
+        formData.append('AUDIO — Has Equipment', getActivePill('audioHasEquip'));
+        formData.append('AUDIO — Extra Notes', getTextarea('stepAudio'));
+      }
+
+      // ── AUTOMATION DETAILS ──
+      if (selectedServices.includes('automation')) {
+        formData.append('AUTO — Ecosystem', getActivePill('autoEco'));
+        formData.append('AUTO — Needs', getChecked('auto'));
+        formData.append('AUTO — Device Count', getActivePill('autoDevices'));
+        formData.append('AUTO — Extra Notes', getTextarea('stepAutomation'));
+      }
+
+      fetch('https://formspree.io/f/mnjryvyv', {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+    }
+
+    // ── HELPER FUNCTIONS ──
+    function getActivePill(groupId) {
+      const active = document.querySelector('#' + groupId + ' .pill.active');
+      return active ? active.textContent.trim() : 'Not selected';
+    }
+
+    function getChecked(name) {
+      const checked = Array.from(document.querySelectorAll('input[name="' + name + '"]:checked'));
+      return checked.length > 0 ? checked.map(i => i.value).join(', ') : 'None selected';
+    }
+
+    function getTextarea(stepId) {
+      const textareas = document.querySelectorAll('#' + stepId + ' textarea');
+      const last = textareas[textareas.length - 1];
+      return last ? last.value.trim() || 'None' : 'None';
+    }
+
+    function getTextareaByIndex(stepId, index) {
+      const textareas = document.querySelectorAll('#' + stepId + ' textarea');
+      return textareas[index] ? textareas[index].value.trim() || 'None' : 'None';
+    }
+  </script>
+</body>
+</html>
